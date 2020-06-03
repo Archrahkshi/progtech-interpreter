@@ -51,14 +51,14 @@ class One : Interpreter {
 }
 
 class TenToNineteen : Interpreter {
-    override fun one() = "одиннадцать"
-    override fun two() = "двенадцать"
-    override fun three() = "тринадцать"
-    override fun four() = "четырнадцать"
-    override fun five() = "пятнадцать"
-    override fun six() = "шестнадцать"
-    override fun seven() = "семнадцать"
-    override fun eight() = "восемнадцать"
-    override fun nine() = "девятнадцать"
-    override fun zero() = "десять"
+    override fun one() = "одиннадцать "
+    override fun two() = "двенадцать "
+    override fun three() = "тринадцать "
+    override fun four() = "четырнадцать "
+    override fun five() = "пятнадцать "
+    override fun six() = "шестнадцать "
+    override fun seven() = "семнадцать "
+    override fun eight() = "восемнадцать "
+    override fun nine() = "девятнадцать "
+    override fun zero() = "десять "
 }

@@ -5,6 +5,7 @@ class MyInterpreter {
     private val hundredsOfThousands = Hundred()
     private val tensOfThousands = Ten()
     private val thousands = Thousand()
+    private val tenToNineteenThousand = TenToNineteen()
     private val hundreds = Hundred()
     private val tens = Ten()
     private val ones = One()
@@ -43,13 +44,24 @@ class MyInterpreter {
         number = millions.interpret(number)
         number = Pair(number.first, number.second + wordMillions)
         number = hundredsOfThousands.interpret(number)
-        number = tensOfThousands.interpret(number)
-        val wordThousands = if (hasThousands) when (number.first.first()) {
-            '1' -> "тысяча "
-            '2', '3', '4' -> "тысячи "
-            else -> "тысяч "
-        } else ""
-        number = thousands.interpret(number)
+        val wordThousands: String
+        if (number.first.first() == '1') {
+            number = Pair(number.first.drop(1), number.second)
+            number = tenToNineteenThousand.interpret(number)
+            wordThousands = if (hasThousands) when (number.first.first()) {
+                '1' -> "тысяча "
+                '2', '3', '4' -> "тысячи "
+                else -> "тысяч "
+            } else ""
+        } else {
+            number = tensOfThousands.interpret(number)
+            wordThousands = if (hasThousands) when (number.first.first()) {
+                '1' -> "тысяча "
+                '2', '3', '4' -> "тысячи "
+                else -> "тысяч "
+            } else ""
+            number = thousands.interpret(number)
+        }
         number = Pair(number.first, number.second + wordThousands)
         number = hundreds.interpret(number)
         if (number.first.first() == '1') {
