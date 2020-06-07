@@ -2,7 +2,7 @@
  * Классы, реализующие разряды.
  */
 
-class Thousand : Interpreter {
+class Thousand : Position {
     override fun zero() = ""
     override fun one() = "одна "
     override fun two() = "две "
@@ -15,7 +15,7 @@ class Thousand : Interpreter {
     override fun nine() = "девять "
 }
 
-class Hundred : Interpreter {
+class Hundred : Position {
     override fun zero() = ""
     override fun one() = "сто "
     override fun two() = "двести "
@@ -28,7 +28,7 @@ class Hundred : Interpreter {
     override fun nine() = "девятьсот "
 }
 
-class Ten : Interpreter {
+class Ten : Position {
     override fun zero() = ""
     override fun one() = "десять "
     override fun two() = "двадцать "
@@ -41,7 +41,7 @@ class Ten : Interpreter {
     override fun nine() = "девяносто "
 }
 
-class One : Interpreter {
+class One : Position {
     override fun zero() = ""
     override fun one() = "один "
     override fun two() = "два "
@@ -54,7 +54,7 @@ class One : Interpreter {
     override fun nine() = "девять "
 }
 
-class TenToNineteen : Interpreter {
+class TenToNineteen : Position {
     override fun zero() = "десять "
     override fun one() = "одиннадцать "
     override fun two() = "двенадцать "
