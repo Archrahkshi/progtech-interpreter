@@ -1,4 +1,9 @@
+/**
+ * Классы, реализующие разряды.
+ */
+
 class Thousand : Interpreter {
+    override fun zero() = ""
     override fun one() = "одна "
     override fun two() = "две "
     override fun three() = "три "
@@ -8,10 +13,10 @@ class Thousand : Interpreter {
     override fun seven() = "семь "
     override fun eight() = "восемь "
     override fun nine() = "девять "
-    override fun zero() = ""
 }
 
 class Hundred : Interpreter {
+    override fun zero() = ""
     override fun one() = "сто "
     override fun two() = "двести "
     override fun three() = "триста "
@@ -21,10 +26,10 @@ class Hundred : Interpreter {
     override fun seven() = "семьсот "
     override fun eight() = "восемьсот "
     override fun nine() = "девятьсот "
-    override fun zero() = ""
 }
 
 class Ten : Interpreter {
+    override fun zero() = ""
     override fun one() = "десять "
     override fun two() = "двадцать "
     override fun three() = "тридцать "
@@ -34,10 +39,10 @@ class Ten : Interpreter {
     override fun seven() = "семьдесят "
     override fun eight() = "восемьдесят "
     override fun nine() = "девяносто "
-    override fun zero() = ""
 }
 
 class One : Interpreter {
+    override fun zero() = ""
     override fun one() = "один "
     override fun two() = "два "
     override fun three() = "три "
@@ -47,10 +52,10 @@ class One : Interpreter {
     override fun seven() = "семь "
     override fun eight() = "восемь "
     override fun nine() = "девять "
-    override fun zero() = ""
 }
 
 class TenToNineteen : Interpreter {
+    override fun zero() = "десять "
     override fun one() = "одиннадцать "
     override fun two() = "двенадцать "
     override fun three() = "тринадцать "
@@ -60,5 +65,4 @@ class TenToNineteen : Interpreter {
     override fun seven() = "семнадцать "
     override fun eight() = "восемнадцать "
     override fun nine() = "девятнадцать "
-    override fun zero() = "десять "
 }

@@ -1,4 +1,12 @@
+/**
+ * Интерфейс, описывающий функции для интерпретации каждой цифры
+ * и определяющий, какой цифре какая функция соответствует.
+ */
 interface Interpreter {
+    /**
+     * Интерпретация цифр.
+     */
+    fun zero(): String
     fun one(): String
     fun two(): String
     fun three(): String
@@ -8,11 +16,16 @@ interface Interpreter {
     fun seven(): String
     fun eight(): String
     fun nine(): String
-    fun zero(): String
 
+    /**
+     * Интерпретация одного разряда числа.
+     * @param number пара, содержащая представление числа в цифровом и текстовом виде.
+     * @return та же пара с учётом интерпретации данного разряда.
+     */
     fun interpret(number: Pair<String, String>) = Pair(
         number.first.drop(1),
         number.second + when (number.first.first()) {
+            '0' -> zero()
             '1' -> one()
             '2' -> two()
             '3' -> three()
@@ -22,7 +35,6 @@ interface Interpreter {
             '7' -> seven()
             '8' -> eight()
             '9' -> nine()
-            '0' -> zero()
             else -> ""
         }
     )
